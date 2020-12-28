@@ -62,14 +62,14 @@ header .banner-text h1 {
    color: #fff;
    letter-spacing: -2px;
    margin: 0 auto 18px auto;
-   text-shadow: 0px 1px 3px rgba(0, 0, 0, .8);
+   text-shadow: 5px 5px 5px rgb(0, 0, 0, .8);
 }
 header .banner-text h3 {
-   font: 18px/1.9em 'librebaskerville-regular', serif;
-   color: #A8A8A8;
+   font: 18px/1.9em 'opensans-bold', serif;
+   color: #ffffff;
    margin: 0 auto;
    width: 70%;
-   text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+   text-shadow: 1px 1px 1px rgb(0, 0, 0, .8);
 }
 header .banner-text h3 span,
 header .banner-text h3 a {
@@ -87,7 +87,7 @@ header .social {
    margin: 24px 0;
    padding: 0;
    font-size: 30px;
-   text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
+   text-shadow: 3px 3px 3px rgba(0, 0, 0, .8);
 }
 header .social li {
    display: inline-block;
@@ -95,7 +95,7 @@ header .social li {
    padding: 0;
 }
 header .social li a { color: #fff; }
-header .social li a:hover { color: #11ABB0; }
+header .social li a:hover { color: rgb(127, 142, 170); }
 
 /* scrolldown link */
 header .scrolldown a {
@@ -111,13 +111,14 @@ header .scrolldown a {
    line-height: 42px;
    color: #fff;
    border-radius: 100%;
+   text-shadow: 2px 2px 2px rgba(0, 0, 0, .8);
 
    -webkit-transition: all .3s ease-in-out;
    -moz-transition: all .3s ease-in-out;
    -o-transition: all .3s ease-in-out;
    transition: all .3s ease-in-out;
 }
-header .scrolldown a:hover { color: #11ABB0; }
+header .scrolldown a:hover { color: rgb(127, 142, 170); }
 
 /* primary navigation
 --------------------------------------------------------------------- */
@@ -125,7 +126,7 @@ header .scrolldown a:hover { color: #11ABB0; }
 	 margin: 0;
 	 padding: 0;
 	 border: none;
-	 outline: none;
+    outline: none;
 }
 
 /* nav-wrap */
@@ -139,6 +140,7 @@ header .scrolldown a:hover { color: #11ABB0; }
    position: fixed;
    left: 0;
    top: 0;
+   text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
 }
 .opaque { background-color: #333; }
 
@@ -194,7 +196,7 @@ ul#nav li.current a { color: #F06000; }
 }
 
 #about a, #about a:visited  { color: #fff; }
-#about a:hover, #about a:focus { color: #11ABB0; }
+#about a:hover, #about a:focus { color: #rgb(127, 142, 170); }
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
@@ -242,7 +244,7 @@ ul#nav li.current a { color: #F06000; }
    overflow: hidden;
 }
 
-#resume a, #resume a:visited  { color: #11ABB0; }
+#resume a, #resume a:visited  { color: rgb(127, 142, 170); }
 #resume a:hover, #resume a:focus { color: #313131; }
 
 #resume h1 {
@@ -251,7 +253,7 @@ ul#nav li.current a { color: #F06000; }
    letter-spacing: 1px;
 }
 #resume h1 span {
-   border-bottom: 3px solid #11ABB0;
+   border-bottom: 3px solid rgb(127, 142, 170);
    padding-bottom: 6px;
 }
 #resume h3 {
@@ -267,7 +269,7 @@ ul#nav li.current a { color: #F06000; }
    border-bottom: 1px solid #E8E8E8;
 }
 #resume .info {
-   font: 16px/24px 'librebaskerville-italic', serif;
+   font: 16px/24px 'opensans-italic', serif;
    color: #6E7881;
    margin-bottom: 18px;
    margin-top: 9px;
