@@ -7,10 +7,10 @@ class About extends Component {
       var name = this.props.data.name;
       var profilepic= "images/"+this.props.data.image;
       var bio = this.props.data.bio;
-      var street = this.props.data.address.street;
       var city = this.props.data.address.city;
       var state = this.props.data.address.state;
-      var zip = this.props.data.address.zip;
+      var insta_url = this.props.data.social[1].url;
+      var instagram = this.props.data.instagram;
       var email = this.props.data.email;
       var resumeDownload = this.props.data.resumedownload;
     }
@@ -30,9 +30,8 @@ class About extends Component {
                   <h2>Contact Details</h2>
                   <p className="address">
 						   <span>{name}</span><br />
-						   <span>{street}<br />
-						         {city} {state}, {zip}
-                   </span><br />
+						   <span>{city}, {state}</span><br />
+                     <span><a href={insta_url}>{instagram}</a></span> <br />
                      <span>{email}</span>
 					   </p>
                </div>
