@@ -7,6 +7,7 @@
     "bio":"Born and raised in Upstate New York, I've always had an interest in STEM, with CS coming into my life my junior year of high school. Outside of software development, I'm interested in hockey, mechanical keyboards, hiking, and gaming.",
     "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
     "email": "jacpolacek at gmail dot com",
+    "instagram": "@fakepolacek29",
     "address":{
       "street":"(Your Street)",
       "city":"Ithaca",
@@ -35,7 +36,7 @@
     ]
   },
   "resume":{
-    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "skillmessage":"",
     "education":[
       {
         "school":"Cornell University - College of Engineering",
@@ -46,16 +47,16 @@
     ],
     "work":[
       {
-        "company":"Awesome Design Studio",
-        "title":"Senior UX God ",
-        "years":"March 2010 - Present",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company":"Slack",
+        "title":"Security Software Engineering Intern",
+        "years":"Summer 2020",
+        "description":"While working remotely, I worked with the Product Security Foundations team to create an HTML Sanitizer in Hacklang in order to prevent Cross-Site Scripting attacks."
       },
       {
-        "company":"Super Cool Studio",
-        "title":"Junior bug fixer",
-        "years":"March 2007 - February 2010",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company":"SRC, Inc.",
+        "title":"Electronic Warfare Unit Software Engineering Intern",
+        "years":"Summer 2019",
+        "description":"Rewrote and extended over 100 C# interfaces to reach compatibility with latest .NET Framework while working on government contracts."
       }
     ],
     "skills":[
@@ -64,62 +65,64 @@
         "level":"60%"
       },
       {
-        "name":"Illustrator",
-        "level":"55%"
+        "name":"Hacklang",
+        "level":"75%"
       },
       {
         "name":"ReactJs",
         "level":"50%"
       },
       {
-        "name":"CSS",
-        "level":"90%"
+        "name":"PHP",
+        "level":"65%"
       },
       {
-        "name":"HTML5",
-        "level":"80%"
+        "name":"Python",
+        "level":"85%"
       },
       {
-        "name":"VueJs",
+        "name":"Java",
+        "level":"60%"
+      },
+      {
+        "name":"OCaml",
+        "level":"70%"
+      },
+      {
+        "name":"C/C++",
         "level":"50%"
-      },
-      {
-        "name":"MongoDB",
-        "level":"80%"
       }
     ]
   },
   "portfolio":{
     "projects": [
       {
-        "title":"Canadian Wanderlust",
-        "category":"My Travel Blog for my post-university travels",
-        "image":"canadian-wanderlust.jpg",
-        "url":"https://www.canadianwanderlust.com"
+        "title":"A Promised Land",
+        "author":"Barack Obama",
+        "category":"The first of two memoirs from the 44th POTUS, focusing on Obama's life from childhood to early career, from to his state senate campaign to the end of his first term as president.",
+        "image":"A_Promised_Land.png",
+        "url":"https://en.wikipedia.org/wiki/A_Promised_Land"
       },
       {
-        "title":"Fury Fighting Gear",
-        "category":"(offline now) A fighting gear company I started",
-        "image":"fury-fighting-gear.jpg",
-        "url":"http://www.timbakerdev.com"
+        "title":"Atomic Habits",
+        "author":"James Clear",
+        "category":"Transform your life with tiny changes in behaviour – starting now.People think that when you want to change your life, you need to think big. But world-renowned habits expert James Clear has discovered another way.",
+        "image":"atomic_habits.jpg",
+        "url":"https://jamesclear.com/atomic-habits"
       },
       {
-        "title":"Original Thai Food",
-        "category":"Website I built for a restaurant I like in Thailand",
-        "image":"original-thai-food.jpg",
-        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
+        "title":"Slaughterhouse-Five",
+        "author":"Kurt Vonnegut",
+        "category":"Also known as The Children's Crusade: A Duty-Dance with Death, this is a science fiction infused anti-war novel by Kurt Vonnegut, first published in 1969.",
+        "image":"slaughterhouse-five.jpg",
+        "url":"https://en.wikipedia.org/wiki/Slaughterhouse-Five"
       },
       {
-        "title":"Resume Website",
-        "category":"A React based resume website template",
-        "image":"resume-website.jpg",
-        "url":"http://www.timbakerdev.com"
-      },
-      {
-        "title":"Smirkspace",
-        "category":"(MVP Only) A React and Meteor based chat University project.",
-        "image":"smirkspace.jpg",
-        "url":"http://www.smirkspace.com"
+        "title":"Antisocial",
+        "author":"Andrew Marantz",
+        "category":"A deeply immersive chronicle of how the optimistic entrepreneurs of Silicon Valley set out to create a free and democratic internet–and how the cynical propagandists of the alt-right exploited that freedom to propel the extreme into the mainstream.",
+        "image":"antisocial.jpeg",
+        "url":"https://www.penguinrandomhouse.com/books/562022/antisocial-by-andrew-marantz/"
       }
     ]
   },

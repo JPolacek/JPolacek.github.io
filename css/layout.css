@@ -195,8 +195,8 @@ ul#nav li.current a { color: #F06000; }
    overflow: hidden;
 }
 
-#about a, #about a:visited  { color: #fff; }
-#about a:hover, #about a:focus { color: #rgb(127, 142, 170); }
+#about a, #about a:visited  { color: #7A7A7A; }
+#about a:hover, #about a:focus { color: #F06000; }
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
@@ -488,7 +488,7 @@ ul#nav li.current a { color: #F06000; }
 	transition: opacity 0.3s ease-in-out;
 
    position: absolute;
-   top: 50%;
+   top: 90%;
    left: 50%;
    margin-left: -15px;
    margin-top: -15px;
@@ -803,7 +803,7 @@ call-to-action .button {
 }
 #contact .section-head { margin-bottom: 42px; }
 
-#contact a, #contact a:visited  { color: #11ABB0; }
+#contact a, #contact a:visited  { color: #f06000; }
 #contact a:hover, #contact a:focus { color: #fff; }
 
 #contact h1 {
@@ -864,7 +864,7 @@ call-to-action .button {
 #contact textarea:focus,
 #contact select:focus {
 	color: #fff;
-	background-color: #11ABB0;
+	background-color: #f06000;
 }
 #contact button.submit {
 	text-transform: uppercase;
@@ -883,7 +883,7 @@ call-to-action .button {
 	background: #fff;
 }
 #contact span.required {
-	color: #11ABB0;
+	color: #f06000;
 	font-size: 13px;
 }
 #message-warning, #message-success {
@@ -895,7 +895,7 @@ call-to-action .button {
    margin-left: 26%;
 }
 #message-warning { color: #D72828; }
-#message-success { color: #11ABB0; }
+#message-success { color: #4cf000; }
 
 #message-warning i,
 #message-success i {
@@ -1010,4 +1010,4 @@ footer .social-links li:first-child { margin-left: 0; }
    line-height: 60px;
  	border-radius: 100%;
 }
-#go-top a:hover { background-color: #0F9095; }
+#go-top a:hover { background-color: #f06000; }
