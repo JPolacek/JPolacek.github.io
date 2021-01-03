@@ -94,6 +94,19 @@
       }
     ]
   },
+  "ranks":{
+    "ranksmessage": "Since I started drinking coffee, I've given espressos a shot whenever I could get my hands on one. Check out the 'Espresscapade' espresso rankings thus far!",
+    "coffees": [
+      {
+        "name":"Starbucks",
+        "city":"Ithaca"
+      },
+      {
+        "name":"McDonalds",
+        "city":"Florence"
+      }
+    ]
+  },
   "portfolio":{
     "projects": [
       {
