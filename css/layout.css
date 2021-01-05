@@ -1,3 +1,4 @@
+
 /*
 =====================================================================
 *   Ceevee v1.0 Layout Stylesheet
@@ -9,6 +10,7 @@
    a. General Styles
    b. Header Styles
    c. About Section
+   -. Coffee Ranks
    d. Resume Section
    e. Portfolio Section
    f. Call To Action Section
@@ -35,7 +37,8 @@ header {
    width: 100%;
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
    background-size: cover !important;
-	-webkit-background-size: cover !important;
+   -webkit-background-size: cover !important;
+   background-attachment: fixed;
    text-align: center;
    overflow: hidden;
 }
@@ -142,7 +145,11 @@ header .scrolldown a:hover { color: rgb(127, 142, 170); }
    top: 0;
    text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
 }
-.opaque { background-color: #333; }
+.opaque { 
+   /* background-color: rgba(43, 43, 43, .5); */
+   backdrop-filter: blur(1px);
+   background: linear-gradient(180deg, rgba(43,43,43,.9) 10%, rgba(0,0,0,0) 90%);
+}
 
 /* hide toggle button */
 #nav-wrap > a.mobile-btn { display: none; }
@@ -172,6 +179,7 @@ ul#nav li a {
 	text-decoration: none;
    text-align: left;
    color: #fff;
+   opacity: 1.0;
 
 	-webkit-transition: color .2s ease-in-out;
 	-moz-transition: color .2s ease-in-out;
@@ -180,8 +188,9 @@ ul#nav li a {
 	transition: color .2s ease-in-out;
 }
 
-ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
+ul#nav li a:hover { text-shadow: 1px 1px 1px rgb(93, 104, 124); }   
+ul#nav li a:active { background-color: transparent !important; }
 
 
 /* ------------------------------------------------------------------ */
@@ -234,6 +243,52 @@ ul#nav li.current a { color: #F06000; }
 
 
 /* ------------------------------------------------------------------ */
+/* -. CoffeeRanks Section
+/* ------------------------------------------------------------------ */
+
+#ranks {
+   background: #2B2B2B;
+   padding-top: 96px;
+   padding-bottom: 66px;
+   overflow: hidden;
+}
+
+#ranks a, #ranks a:visited  { color: #7A7A7A; }
+#ranks a:hover, #ranks a:focus { color: #F06000; }
+
+#ranks ol.coffees li {
+   font: 15px "opensans-regular";
+   line-height: 10px;
+   color: #d4d4d4;
+}
+
+#ranks ol.coffees li em {
+   font: 15px "opensans-italic";
+   line-height: 10px;
+   color: #8d8d8d;
+}
+
+#ranks h1 {
+   color: #fff;
+   line-height: 45px;
+}
+
+#ranks h1 span {
+   color: #fff;
+   border-bottom: 3px solid #c04d00;
+   padding-bottom: 6px;
+}
+
+#ranks p {  
+   font: 18px 'opensans-bold', sans-serif;
+   color: #fff;
+   margin-bottom: 3px;
+}
+
+/* #ranks .main-col { padding-right: 5%; } */
+
+
+/* ------------------------------------------------------------------ */
 /* d. Resume Section
 /* ------------------------------------------------------------------ */
 
@@ -269,7 +324,7 @@ ul#nav li.current a { color: #F06000; }
    border-bottom: 1px solid #E8E8E8;
 }
 #resume .info {
-   font: 16px/24px 'opensans-italic', serif;
+   font: 16px/24px 'opensans-regular', serif;
    color: #6E7881;
    margin-bottom: 18px;
    margin-top: 9px;
@@ -279,7 +334,7 @@ ul#nav li.current a { color: #F06000; }
    margin-left: 5px;
 }
 #resume .date {
-   font: 15px/24px 'opensans-regular', sans-serif;
+   font: 15px/24px 'opensans-italic', sans-serif;
    margin-top: 6px;
 }
 

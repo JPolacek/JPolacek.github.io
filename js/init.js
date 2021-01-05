@@ -88,10 +88,10 @@
 	   }
       else {
          if (y < h*.20) {
-            nav.removeClass('opaque').fadeIn('fast');
+            nav.removeClass('opaque').fadeIn();
          }
          else {
-            nav.addClass('opaque').fadeIn('fast');
+            nav.addClass('opaque').fadeIn();
          }
       }
 

@@ -94,6 +94,83 @@
       }
     ]
   },
+  "ranks":{
+    "ranksmessage": "Since I started drinking coffee, I've given espressos a shot whenever I could get my hands on one. Check out the 'Espresscapade' espresso rankings thus far!",
+    "coffees": [
+      {
+        "name":"Altissio",
+        "city":"Nespresso Pod*"
+      },
+      {
+        "name":"Double Espresso Chiaro",
+        "city":"Nespresso Pod*"
+      },
+      {
+        "name":"Diavolitto",
+        "city":"Nespresso Pod*"
+      },
+      {
+        "name":"Collegetown Bagels - Collegetown",
+        "city":"Ithaca, NY"
+      },
+      {
+        "name":"Freedom of Espresso - Armory Square",
+        "city":"Syracuse, NY"
+      },
+      {
+        "name":"Chatty Cathy Café",
+        "city":"Ithaca, NY"
+      },
+      {
+        "name":"Temple of Zeus (Single Origin, Gimme!)",
+        "city":"Ithaca, NY"
+      },
+      {
+        "name":"Temple of Zeus (House Blend, Gimme!)",
+        "city":"Ithaca, NY"
+      },
+      {
+        "name":"Gimme! Coffee - Gates Hall",
+        "city":"Ithaca, NY"
+      },
+      {
+        "name":"Recess Coffee - Tipperary Hill",
+        "city":"Syracuse, NY"
+      },
+      {
+        "name":"The Whisk",
+        "city":"Old Forge, NY"
+      },
+      {
+        "name":"Blue Line Café",
+        "city":"Inlet, NY"
+      },
+      {
+        "name":"Starbucks",
+        "city":"Ithaca, NY"
+      },
+      {
+        "name":"Panera",
+        "city":"Camillus, NY"
+      },
+      {
+        "name":"Libe Café (Starbucks)",
+        "city":"Ithaca, NY"
+      },
+      {
+        "name":"McDonald's - Stazione di Santa Maria Novella",
+        "city":"Florence, Italy"
+      },
+      {
+        "name":"Café Jennie - The Cornell Store",
+        "city":"Ithaca, NY"
+      },
+      {
+        "name":"Recess Coffee - Downtown",
+        "city":"Syracuse, NY"
+      }
+    ]
+  },
   "portfolio":{
     "projects": [
       {
