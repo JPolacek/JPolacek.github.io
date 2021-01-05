@@ -17,7 +17,7 @@ class CoffeeRanks extends Component {
       	<div className="row rank">
 
           <div className="three columns header-col">
-            <h1>Coffee <span>Rankings</span></h1>
+            <h1>Espresso <span>Rankings</span></h1>
           </div>
 
           <div className="nine columns main-col">
