@@ -98,6 +98,18 @@
     "ranksmessage": "Since I started drinking coffee, I've given espressos a shot whenever I could get my hands on one. Check out the 'Espresscapade' espresso rankings thus far!",
     "coffees": [
       {
+        "name":"Altissio",
+        "city":"Nespresso Pod*"
+      },
+      {
+        "name":"Double Espresso Chiaro",
+        "city":"Nespresso Pod*"
+      },
+      {
+        "name":"Diavolitto",
+        "city":"Nespresso Pod*"
+      },
+      {
         "name":"Collegetown Bagels - Collegetown",
         "city":"Ithaca, NY"
       },

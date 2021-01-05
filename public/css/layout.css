@@ -37,7 +37,8 @@ header {
    width: 100%;
    background: #161415 url(../images/header-background.jpg) no-repeat top center;
    background-size: cover !important;
-	-webkit-background-size: cover !important;
+   -webkit-background-size: cover !important;
+   background-attachment: fixed;
    text-align: center;
    overflow: hidden;
 }
@@ -144,7 +145,11 @@ header .scrolldown a:hover { color: rgb(127, 142, 170); }
    top: 0;
    text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
 }
-.opaque { background-color: #333; }
+.opaque { 
+   /* background-color: rgba(43, 43, 43, .5); */
+   backdrop-filter: blur(1px);
+   background: linear-gradient(180deg, rgba(43,43,43,.9) 10%, rgba(0,0,0,0) 90%);
+}
 
 /* hide toggle button */
 #nav-wrap > a.mobile-btn { display: none; }
@@ -174,6 +179,7 @@ ul#nav li a {
 	text-decoration: none;
    text-align: left;
    color: #fff;
+   opacity: 1.0;
 
 	-webkit-transition: color .2s ease-in-out;
 	-moz-transition: color .2s ease-in-out;
@@ -182,8 +188,9 @@ ul#nav li a {
 	transition: color .2s ease-in-out;
 }
 
-ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
+ul#nav li a:hover { text-shadow: 1px 1px 1px rgb(93, 104, 124); }   
+ul#nav li a:active { background-color: transparent !important; }
 
 
 /* ------------------------------------------------------------------ */
