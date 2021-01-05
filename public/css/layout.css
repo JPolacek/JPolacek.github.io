@@ -148,7 +148,7 @@ header .scrolldown a:hover { color: rgb(127, 142, 170); }
 .opaque { 
    /* background-color: rgba(43, 43, 43, .5); */
    backdrop-filter: blur(1px);
-   background: linear-gradient(180deg, rgba(43,43,43,.9) 10%, rgba(0,0,0,0) 90%);
+   background: linear-gradient(180deg, rgba(43,43,43,.9), rgba(0,0,0,0) 90%);
 }
 
 /* hide toggle button */
