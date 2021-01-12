@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 class CoffeeRanks extends Component {
   render() {
 
+    var rankmessage = "Since I started drinking coffee, I've given espressos a shot whenever I could get my hands on one. Check out the 'Espresscapade' espresso rankings thus far!";
+
     if(this.props.data){
-      var rankmessage = this.props.data.ranksmessage;
-      var coffees = this.props.data.coffees.map(function(coffees){
-        return <li key="coffee">
-		            {coffees.name} <span>&bull;</span> <em>{coffees.city}</em>
-		           </li>
-	  })
+      var coffees = this.props.data.feed.entry.map((row, i) => {
+      return <li key={row.gsx$shopname.$t}>
+		      {row.gsx$shopname.$t} <span>&bull;</span> <em>{row.gsx$location.$t}</em>
+		    </li>
+      });
+      console.log(coffees);
     }
 
     return (
@@ -22,7 +24,7 @@ class CoffeeRanks extends Component {
 
           <div className="nine columns main-col">
             <p>{rankmessage}</p>
-            <ol class="coffees">
+            <ol className="coffees">
               {coffees}
             </ol>
           </div>
