@@ -253,8 +253,25 @@ ul#nav li a:active { background-color: transparent !important; }
    overflow: hidden;
 }
 
+#ranks div::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+#ranks div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+#ranks div::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 #ranks a, #ranks a:visited  { color: #7A7A7A; }
 #ranks a:hover, #ranks a:focus { color: #F06000; }
+
+#ranks ol {
+   height: 150px;
+}
 
 #ranks ol.coffees li {
    font: 15px "opensans-regular";
@@ -285,7 +302,10 @@ ul#nav li a:active { background-color: transparent !important; }
    margin-bottom: 3px;
 }
 
-/* #ranks .main-col { padding-right: 5%; } */
+#ranks .main-col { 
+   padding-right: 5%; 
+   overflow-y: scroll;
+}
 
 
 /* ------------------------------------------------------------------ */
