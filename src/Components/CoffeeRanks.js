@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import {Collapse} from 'react-collapse';
 
 class CoffeeRanks extends Component {
   render() {
@@ -22,8 +23,9 @@ class CoffeeRanks extends Component {
             <h1>Espresso <span>Rankings</span></h1>
           </div>
 
+          <p>{rankmessage}</p>
+
           <div className="nine columns main-col">
-            <p>{rankmessage}</p>
             <ol className="coffees">
               {coffees}
             </ol>
