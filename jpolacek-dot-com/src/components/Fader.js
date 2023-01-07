@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import '../App.css'
 
 const Fader = ({ text }) => {
@@ -10,7 +9,7 @@ const Fader = ({ text }) => {
 
     useEffect(() => {
         const timeout = setInterval(() => {
-            if (fadeProp.fade === 'fade-in') {
+            if (fadeProp.fade === 'fade-in' && count < 1) {
                 setFadeProp({
                     fade: 'fade-out'
                 })
@@ -22,7 +21,7 @@ const Fader = ({ text }) => {
         }, 2000);
 
         return () => clearInterval(timeout)
-    }, [count]);
+    }, [count, fadeProp.fade]);
 
 	if (count < 1) {
 		setTimeout(() => {
@@ -32,7 +31,12 @@ const Fader = ({ text }) => {
     return (
         <p data-testid="fader" className={fadeProp.fade}>
             {count === 0 && text}
-            {count === 1 && "Goodbye."}
+            {
+                count === 1 && 
+                <a className="App-link" href="JacobPolacekResume2021.pdf">
+                    Goodbye.
+                </a>
+            }
 		</p>
     )
 }
