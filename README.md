@@ -33,6 +33,9 @@ Once the changes are merged, check out the latest version of `master` and run `n
 from `jpolacek-dot-com`. This will build the React app with `npm` and then deploy the page
 to the `gh-pages` branch using `gh-pages -d build`. This deployment structure was kicked
 off following [these instructions](https://www.letsreact.org/deploy-react-js-application-to-github-pages/).
+After deploying, you will need to go to Settings > Pages > Custom Domain and update the 
+domain to jakepolacek.com. I'm sure there's a way to fix this, but I really don't want to
+mess around with this site too much rn.
 
 ## Random learnings
 
