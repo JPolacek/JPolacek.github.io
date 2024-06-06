@@ -33,7 +33,7 @@ const Fader = ({ text }) => {
             {count === 0 && text}
             {
                 count === 1 && 
-                <a className="App-link" href="JacobPolacekResume2023.pdf">
+                <a className="App-link" href="JakePolacekResume2024.pdf">
                     Goodbye.
                 </a>
             }
