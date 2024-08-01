@@ -1,0 +1,15 @@
+.sliding-image-container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 300px; /* Adjust to fit your image height */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.sliding-image {
+  position: absolute;
+  bottom: 0;
+  will-change: transform;
+}
