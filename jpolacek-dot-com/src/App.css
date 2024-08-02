@@ -33,8 +33,7 @@
   color: white;
   text-decoration: none;
   position: absolute;
-  left: 50%;         /* Move to the center of the container */
-  transform: translateX(-50%); /* Adjust to center the link horizontally */
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 

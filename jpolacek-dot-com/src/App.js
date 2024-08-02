@@ -10,12 +10,7 @@ function App() {
           <a className="App-link" href="JakePolacekResume2024.pdf">
             Goodbye.
           </a>
-          <ChooChoo className="choochoo"
-            src="tube-train.png"
-            speed={30}
-            direction="left"
-            width={2300}
-          />
+          <ChooChoo className="choochoo" src="tube-train.png"/>
         </Fader>
       </header>
     </div>

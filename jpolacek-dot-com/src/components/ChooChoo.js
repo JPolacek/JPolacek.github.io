@@ -5,13 +5,13 @@ import './ChooChoo.css';
 const ChooChoo = ({
   src,
   alt = 'Sliding Image',
-  speed = 5,
-  direction = 'left',
-  width = 300,
 }) => {
   const imageRef = useRef(null);
-  const [position, setPosition] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [position, setPosition] = useState(0);
+  const [direction, setDirection] = useState('left');
+  const [speed, setSpeed] = useState(30);
+  const [countdown, setCountdown] = useState(8000);
 
   useLayoutEffect(() => {
     // Calculate start and end positions immediately on component mount
@@ -26,17 +26,25 @@ const ChooChoo = ({
       startPosition = -imageWidth;    // Start from the left
     }
 
-    setPosition(startPosition); // Set initial position
+    setPosition(startPosition);
   }, [direction]);
 
   useEffect(() => {
     // Start animation after 5 second delay
     const timerId = setTimeout(() => {
       setIsAnimating(true);
-    }, 5000);
+    }, 8000);
 
     return () => clearTimeout(timerId);
   }, []);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+	  setIsAnimating(true);
+	}, countdown);
+
+	return () => clearTimeout(timerId);
+  }, [countdown]);
 
   useEffect(() => {
     if (!isAnimating) return; // Exit if not animating
@@ -64,9 +72,11 @@ const ChooChoo = ({
 			(direction === 'left' && newPosition < endPosition) ||
 			(direction === 'right' && newPosition > endPosition)
 		) {
-			// This will prevent the train from moving across the screen more than once.
-			// TODO: I'll need to set a time in order to make sure that the train is restarted
 			setIsAnimating(false);
+			setDirection(Math.floor(Math.random() * 2) >= 1 ? 'left' : 'right');
+			setSpeed(Math.round(Math.random() * 100) + 50);
+			setCountdown(Math.floor(Math.random() * 5000));
+
 			return startPosition;
         }
         return newPosition;
@@ -88,17 +98,19 @@ const ChooChoo = ({
 
   return (
     <div className="sliding-image-container">
-      <img
+      <a href="/london-tube-game">
+	  <img
         ref={imageRef}
         src={src}
         alt={alt}
         className={`sliding-image ${isAnimating ? 'animate' : 'hidden'}`}
         style={{
           transform: `translateX(${position}px)`,
-          width: `${width}px`,
+          width: `2300px`,
           height: 'auto',
         }}
       />
+	  </a>
     </div>
   );
 };
@@ -106,9 +118,6 @@ const ChooChoo = ({
 ChooChoo.propTypes = {
 	src: PropTypes.string.isRequired,
 	alt: PropTypes.string,
-	speed: PropTypes.number,
-	direction: PropTypes.string,
-	width: PropTypes.number,
 }
 
 export default ChooChoo;
