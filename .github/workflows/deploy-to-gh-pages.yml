@@ -12,8 +12,8 @@ jobs:
 
     - name: Build
       run: |
-        npm install
-        npm run-script build
+        cd jpolacek-dot-com
+        npm run deploy
       env:
         MAPBOX_GL_ACCESS_TOKEN: ${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}
         MAPBOX_STYLE_URI: ${{ secrets.MAPBOX_STYLE_URI }}
