@@ -13,6 +13,7 @@ jobs:
     - name: Build
       run: |
         cd jpolacek-dot-com
+        npm i
         npm run deploy
       env:
         MAPBOX_GL_ACCESS_TOKEN: ${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}
