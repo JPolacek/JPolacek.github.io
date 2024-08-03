@@ -98,7 +98,7 @@ const ChooChoo = ({
 
   return (
     <div className="sliding-image-container">
-      <a href="/london-tube-game">
+      <a href="/london-tube-game/map.html">
 	  <img
         ref={imageRef}
         src={src}
