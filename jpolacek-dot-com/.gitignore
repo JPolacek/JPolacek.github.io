@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/public/london-tube-game/local_consts.js
 
 # testing
 /coverage

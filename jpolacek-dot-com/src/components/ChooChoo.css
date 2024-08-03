@@ -1,0 +1,19 @@
+.sliding-image-container {
+  position: fixed; /* Fixed position to always stay at the bottom */
+  overflow: hidden;
+  width: 100vw;    /* Full width of the viewport */
+  height: 300px;   /* Adjust to fit your image height */
+  bottom: 0;       /* Position it at the bottom */
+  left: 0;         /* Align with the left edge of the viewport */
+  display: flex;
+  align-items: flex-end;   /* Align children to the bottom of the container */
+  justify-content: flex-start; /* Start aligning images from the left */
+  background-color: transparent; /* Make the container transparent */
+  z-index: 10;        /* Set a high z-index to ensure it overlaps other elements */
+}
+
+.sliding-image {
+  position: absolute;
+  bottom: 0;        /* Align image to the bottom of the container */
+  will-change: transform;
+}
