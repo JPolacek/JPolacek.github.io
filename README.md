@@ -28,6 +28,8 @@ $ npm start
 http://localhost:3000/ will then open with the latest changes. When developing, you can
 just edit, save, and refresh the localhost tab in order to see any changes!
 
+If you're messing with the london-tube-game, make sure you have the local secrets somewhere and use them instead of the environment variables in jpolacek-dot-com/public/london-tube-game/consts.js
+
 When you're happy with your changes, open up a PR, and then approve and merge the changes.
 Once the changes are merged, check out the latest version of `master` and run `npm run deploy`
 from `jpolacek-dot-com`. This will build the React app with `npm` and then deploy the page
@@ -47,3 +49,4 @@ mess around with this site too much rn.
 This could protect from any feature branch just haphazardly being deployed.
 * What other security do I need to make sure that no one else comes along and just pushes
 random garbage to my site?
+
