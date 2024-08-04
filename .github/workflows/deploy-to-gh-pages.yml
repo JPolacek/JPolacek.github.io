@@ -7,21 +7,26 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Configure Git
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-    - name: Build
-      run: |
-        cd jpolacek-dot-com
-        npm i
-        npm install -g gh-pages
-        npm run deploy
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_KEY }}
-        MAPBOX_GL_ACCESS_TOKEN: ${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}
-        MAPBOX_STYLE_URI: ${{ secrets.MAPBOX_STYLE_URI }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Use the version your project requires
+
+      - name: Install Dependencies
+        run: |
+          cd jpolacek-dot-com
+          npm install
+
+      - name: Build and Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the default GitHub token
+          MAPBOX_GL_ACCESS_TOKEN: ${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}
+          MAPBOX_STYLE_URI: ${{ secrets.MAPBOX_STYLE_URI }}
+        run: |
+          cd jpolacek-dot-com
+          npm install gh-pages --save-dev
+          npm run build
+          npm run deploy -- --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jpolacek/jpolacek.github.io.git
