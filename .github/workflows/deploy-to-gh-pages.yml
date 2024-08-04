@@ -8,18 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
-
-    - name: Configure Git
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
+      uses: actions/checkout@v3
       
     - name: Build
       run: |
         cd jpolacek-dot-com
-        npm i
-        npm install -g gh-pages
+        npm install gh-pages --save-dev
+        git init
+        git remote add origin git@github.com:jpolacek/jpolacek.github.io.git
         npm run deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_KEY }}
