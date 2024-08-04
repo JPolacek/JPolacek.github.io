@@ -17,7 +17,6 @@ jobs:
     - name: Install dependencies and build
       run: |
         cd jpolacek-dot-com
-        cd jpolacek-dot-com
         npm ci
         npm run build
       env:
