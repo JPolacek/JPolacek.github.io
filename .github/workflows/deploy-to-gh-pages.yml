@@ -17,12 +17,6 @@ jobs:
         npm install -g gh-pages
         npm run deploy
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_KEY }}
         MAPBOX_GL_ACCESS_TOKEN: ${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}
         MAPBOX_STYLE_URI: ${{ secrets.MAPBOX_STYLE_URI }}
-
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist
