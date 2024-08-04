@@ -4,33 +4,26 @@ on:
     branches:
       - master
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18' # Use the version your project requires
-
-      - name: Install Dependencies
-        run: |
-          cd jpolacek-dot-com
-          npm install
-
-      - name: Configure Git Identity
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Build and Deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the default GitHub token
-          MAPBOX_GL_ACCESS_TOKEN: ${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}
-          MAPBOX_STYLE_URI: ${{ secrets.MAPBOX_STYLE_URI }}
-        run: |
-          cd jpolacek-dot-com
-          npm run build
-          npm run deploy -- --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jpolacek/jpolacek.github.io.git
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build
+      run: |
+        cd jpolacek-dot-com
+        npm run build
+      
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./static
