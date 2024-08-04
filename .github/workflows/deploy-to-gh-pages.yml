@@ -1,30 +1,28 @@
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches:
-      - master
+name: Build and Deploy
+on: [push]
+permissions:
+  contents: write
 jobs:
-  deploy:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        
-    - name: Install dependencies and build
-      run: |
-        cd jpolacek-dot-com
-        npm ci
-        npm run build
-      env:
-        MAPBOX_GL_ACCESS_TOKEN: ${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}
-        MAPBOX_STYLE_URI: ${{ secrets.MAPBOX_STYLE_URI }}
-      
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./static
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # Use the GitHub token for authentication
+
+      - name: Install, Build, Deploy
+        run: |
+          git config --global user.email "jpolacek@gmail.com"
+          git config --global user.name "JPolacek"
+          cd jpolacek-dot-com
+          npm ci
+          npm install -g gh-pages
+          touch .env
+          echo REACT_APP_MAPBOX_GL_ACCESS_TOKEN=${{ secrets.MAPBOX_GL_ACCESS_TOKEN }} >> .env
+          echo REACT_APP_MAPBOX_STYLE_URI=${{ secrets.MAPBOX_STYLE_URI }} >> .env
+          npm run deploy -- --repo=https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Add CNAME File
+        run: echo 'jakepolacek.com' > CNAME
