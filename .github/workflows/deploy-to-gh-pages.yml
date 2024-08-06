@@ -21,7 +21,7 @@ jobs:
           npm ci
           npm install -g gh-pages
           touch .env
-          echo REACT_APP_MAPBOX_GL_ACCESS_TOKEN=${{ secrets.MAPBOX_GL_ACCESS_TOKEN }} >> .env
+          echo REACT_APP_MAPBOX_ACCESS_TOKEN=${{ secrets.MAPBOX_GL_ACCESS_TOKEN }} >> .env
           echo REACT_APP_MAPBOX_STYLE_URI=${{ secrets.MAPBOX_STYLE_URI }} >> .env
           grep -c "REACT_APP_MAPBOX_ACCESS_TOKEN=.+" .env
           grep -c "REACT_APP_MAPBOX_STYLE_URI=.+" .env
