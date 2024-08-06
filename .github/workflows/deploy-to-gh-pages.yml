@@ -11,12 +11,14 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # Use the GitHub token for authentication
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Debug Secrets
+        run: |
+          echo "MAPBOX_GL_ACCESS_TOKEN: [${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}]"
+          echo "MAPBOX_STYLE_URI: [${{ secrets.MAPBOX_STYLE_URI }}]"
 
       - name: Install, Build, Deploy
-        env:
-          MAPBOX_GL_ACCESS_TOKEN: ${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}
-          MAPBOX_STYLE_URI: ${{ secrets.MAPBOX_STYLE_URI }}
         run: |
           git config --global user.email "jpolacek@gmail.com"
           git config --global user.name "JPolacek"
@@ -24,11 +26,11 @@ jobs:
           npm ci
           npm install -g gh-pages
           touch .env
-          echo REACT_APP_MAPBOX_ACCESS_TOKEN="$MAPBOX_GL_ACCESS_TOKEN" >> .env
-          echo REACT_APP_MAPBOX_STYLE_URI="$MAPBOX_STYLE_URI" >> .env
+          echo "REACT_APP_MAPBOX_ACCESS_TOKEN=${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}" >> .env
+          echo "REACT_APP_MAPBOX_STYLE_URI=${{ secrets.MAPBOX_STYLE_URI }}" >> .env
+          echo "Contents of .env file:"
+          cat .env
           wc -l .env
-          grep -c "REACT_APP_MAPBOX_ACCESS_TOKEN=.+" .env
-          grep -c "REACT_APP_MAPBOX_STYLE_URI=.+" .env
           npm run deploy -- --repo=https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: Add CNAME File
