@@ -158,6 +158,20 @@ function TubeGame() {
   };
 
   useEffect(() => {
+    if (typeof ACCESS_TOKEN == 'undefined') {
+      console.log("UNDEFINED ACCESS_TOKEN");
+      return;
+    } else if (ACCESS_TOKEN.length == 0) {
+      console.log("ACCESS_TOKEN LEN 0");
+      return;
+    } else if (typeof STYLE_URI == 'undefined') {
+      console.log("STYLE URI UNDEFINED");
+      return;
+    } else if (STYLE_URI.length == 0) {
+      console.log("STYLE URI LEN 0");
+      return;
+    }
+  
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
