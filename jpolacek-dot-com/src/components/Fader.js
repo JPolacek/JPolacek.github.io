@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import '../App.css'
+import '../pages/Home.css'
 
 const Fader = ({ text, children, duration = 1000 }) => {
     const [fadeProp, setFadeProp] = useState({
