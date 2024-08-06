@@ -1,19 +1,20 @@
-import './App.css';
-import Fader from './components/Fader'
-import ChooChoo from './components/ChooChoo'
+import TubeGame from './pages/TubeGame'
+import Home from './pages/Home'
+import React from "react";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Fader text="Jake Polacek">
-          <a className="App-link" href="JakePolacekResume2024.pdf">
-            Goodbye.
-          </a>
-          <ChooChoo className="choochoo" src="tube-train.png"/>
-        </Fader>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/TubeGame" element={<TubeGame />} />
+      </Routes>
+    </Router>
   );
 }
 

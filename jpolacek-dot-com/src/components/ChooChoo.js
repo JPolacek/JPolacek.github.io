@@ -4,6 +4,7 @@ import './ChooChoo.css';
 
 const ChooChoo = ({
   src,
+  children,
   alt = 'Sliding Image',
 }) => {
   const imageRef = useRef(null);
@@ -98,8 +99,7 @@ const ChooChoo = ({
 
   return (
     <div className="sliding-image-container">
-      <a href="/london-tube-game/map.html">
-	  <img
+      <img
         ref={imageRef}
         src={src}
         alt={alt}
@@ -110,7 +110,6 @@ const ChooChoo = ({
           height: 'auto',
         }}
       />
-	  </a>
     </div>
   );
 };
