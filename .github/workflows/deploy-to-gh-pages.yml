@@ -4,13 +4,14 @@ permissions:
   contents: write
 jobs:
   build-and-deploy:
+    environment: github-pages
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # Use the GitHub token for authentication
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install, Build, Deploy
         run: |
@@ -20,8 +21,9 @@ jobs:
           npm ci
           npm install -g gh-pages
           touch .env
-          echo REACT_APP_MAPBOX_GL_ACCESS_TOKEN=${{ secrets.MAPBOX_GL_ACCESS_TOKEN }} >> .env
-          echo REACT_APP_MAPBOX_STYLE_URI=${{ secrets.MAPBOX_STYLE_URI }} >> .env
+          echo "REACT_APP_MAPBOX_ACCESS_TOKEN=${{ secrets.MAPBOX_GL_ACCESS_TOKEN }}" >> .env
+          echo "REACT_APP_MAPBOX_STYLE_URI=${{ secrets.MAPBOX_STYLE_URI }}" >> .env
+          wc -l .env
           npm run deploy -- --repo=https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: Add CNAME File
