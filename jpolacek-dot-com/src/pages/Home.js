@@ -2,7 +2,6 @@ import './Home.css';
 import Fader from '../components/Fader'
 import ChooChoo from '../components/ChooChoo'
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -13,9 +12,7 @@ function Home() {
 			Goodbye.
 		  </a>
 		</Fader>
-		<Link to="/TubeGame">
-		  <ChooChoo className="choochoo" src="tube-train.png" />
-		</Link>
+		<ChooChoo className="choochoo" src="tube-train.png" />
 	  </header>
 	</div>
   );
