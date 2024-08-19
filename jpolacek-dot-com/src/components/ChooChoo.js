@@ -1,4 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import './ChooChoo.css';
 
@@ -99,17 +100,19 @@ const ChooChoo = ({
 
   return (
     <div className="sliding-image-container">
-      <img
-        ref={imageRef}
-        src={src}
-        alt={alt}
-        className={`sliding-image ${isAnimating ? 'animate' : 'hidden'}`}
-        style={{
-          transform: `translateX(${position}px)`,
-          width: `2300px`,
-          height: 'auto',
-        }}
-      />
+      <Link to="/TubeGame">
+        <img
+          ref={imageRef}
+          src={src}
+          alt={alt}
+          className={`sliding-image ${isAnimating ? 'animate' : 'hidden'}`}
+          style={{
+            transform: `translateX(${position}px)`,
+            width: `2300px`,
+            height: 'auto',
+          }}
+        />
+      </Link>
     </div>
   );
 };
