@@ -8,9 +8,14 @@ function Home() {
 	<div className="App">
 	  <header className="App-header">
 		<Fader text="Jake Polacek">
-		  <a className="App-link" href="JakePolacekResume2024.pdf">
-			Goodbye.
-		  </a>
+		  <p>
+		  	Here for <a className="App-link" href="JakePolacekResume2024.pdf">
+			  <span>
+			  	business?
+			  </span>
+			</a><br />
+		  	Or games? &darr;
+		  </p>
 		</Fader>
 		<ChooChoo className="choochoo" src="tube-train.png" />
 	  </header>
