@@ -23,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(12vmax);
+  font-size: calc(6vmax);
   font-family: 'Raleway', sans-serif;
   font-weight: 1,500;
   color: white;
@@ -31,15 +31,9 @@
 
 .App-link {
   color: white;
-  text-decoration: none;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.App-link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.3rem;
+  text-underline-offset: 0.5rem;
 }
 
 @keyframes App-logo-spin {
