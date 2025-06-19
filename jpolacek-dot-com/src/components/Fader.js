@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import BlurText from "./BlurText/BlurText";
+import GradientText from "./GradientText/GradientText";
 import "../pages/Home.css";
 
 const handleAnimationComplete = () => {
@@ -19,7 +20,7 @@ const Fader = ({ text, children, duration = 2200 }) => {
   // Handler to set animation as done
   const handleFinalAnimationComplete = () => {
     console.log("FINAL ANIMATION COMPLETE");
-    setAnimationDone(true);
+    setTimeout(() => setAnimationDone(true), 2000);
   };
 
   useEffect(() => {
@@ -43,30 +44,6 @@ const Fader = ({ text, children, duration = 2200 }) => {
     }
   }, [count, duration]);
 
-  // After animation, replace the "business" span with a link
-  useEffect(() => {
-    console.log("ANIMATION EFFECT");
-    if (animationDone && blurTextRef.current) {
-      console.log("ANIMATION EFFECT IF");
-      // Find all spans inside the BlurText output
-      const spans = blurTextRef.current.querySelectorAll("span");
-      spans.forEach((span) => {
-        if (span.textContent.trim() === "business") {
-          // Create the <a> element
-          const link = document.createElement("a");
-          link.className = "App-link";
-          link.href = "Jake_Polacek_Resume.pdf";
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          // Move the span inside the link
-          link.appendChild(span.cloneNode(true));
-          // Replace the span with the link
-          span.replaceWith(link);
-        }
-      });
-    }
-  }, [animationDone]);
-
   return (
     <div data-testid="fader" className={fadeProp.fade}>
       {count === 0 && (
@@ -79,7 +56,7 @@ const Fader = ({ text, children, duration = 2200 }) => {
           className="text-2xl mb-8"
         />
       )}
-      {count === 1 && (
+      {count === 1 && !animationDone && (
         <div ref={blurTextRef}>
           <BlurText
             text={"Here for business or games?"}
@@ -91,7 +68,72 @@ const Fader = ({ text, children, duration = 2200 }) => {
           />
         </div>
       )}
+      {count === 1 && animationDone && (
+        <Splitter>Here for business or games?</Splitter>
+      )}
     </div>
+  );
+};
+
+// Splitter component: splits children string into words and renders each in a styled <span>
+const Splitter = ({ children }) => {
+  // Convert children to string (in case it's not)
+  const text = typeof children === "string" ? children : String(children);
+  // Split into words, keeping punctuation (like '?') attached to the last word
+  const words = text.match(/\S+\s*/g) || [];
+
+  return (
+    <p className="text-2xl mb-8" style={{ display: "flex", flexWrap: "wrap" }}>
+      {words.map((word, idx) => {
+        // Remove trailing whitespace for matching
+        const trimmed = word.trim();
+        if (trimmed === "business") {
+          return (
+            <span
+              key={idx}
+              className="inline-block will-change-[transform,filter,opacity]"
+              style={{ opacity: 1, transform: "none" }}
+            >
+              <GradientText
+                colors={[
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#E83323",
+                  "#E83323",
+                  "#01007C",
+                  "#E83323",
+                  "#E83323",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                  "#FFFFFF",
+                ]} //, "#01007C", "#E83323"]}
+                animationSpeed={10}
+              >
+                <a className="App-link" href="Jake_Polacek_Resume.pdf">
+                  {trimmed}&nbsp;
+                </a>
+              </GradientText>
+            </span>
+          );
+        }
+        return (
+          <span
+            key={idx}
+            className="inline-block will-change-[transform,filter,opacity]"
+            style={{ opacity: 1, transform: "none" }}
+          >
+            {trimmed}&nbsp;
+          </span>
+        );
+      })}
+    </p>
   );
 };
 
